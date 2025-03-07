@@ -48,11 +48,8 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 a. If the question is explicitly about a U.S. president:
      -Use your knowledge or excerpts from ${OWNER_NAME}
-   b. If the question is not about a U.S. president or the powers of the presidency AND the answer explicitly mentions a current or former president of the United States,:
+   b. If the question is not about a U.S. president or the powers of the presidency, begin your response with:
       "This might not be related to the US Presidency"
-      and then proceed to answer using your own knowledge.
-    c. Otherwise, if the question is not about a U.S. president or the powers of the presidency AND the answer does not mention a current or former president of the United States, begin your answer with: 
-        "This might not be related to the US Presidency"
       and then proceed to answer using your own knowledge.
 Excerpts from ${OWNER_NAME}:
 ${context}
