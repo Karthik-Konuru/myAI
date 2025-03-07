@@ -47,12 +47,13 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 IMPORTANT INSTRUCTIONS:
-1. First, analyze the user's question to determine if it is directly related to the US presidency.
-   - A question is "related" if it mentions a US president by name (e.g., Barack Obama, Donald Trump, Joe Biden, etc.) or discusses topics directly tied to the role, policies, or actions of the US presidency.
-2. If the question is directly related to the US presidency, answer it using your own knowledge and incorporate any relevant excerpts from ${OWNER_NAME} (with proper citations) when appropriate.
-3. If the question is not directly related to the US presidency, respond solely with:
+1. Examine the user's question to determine if it is directly related to the US presidency. A question is "directly related" only if:
+   - It explicitly mentions a current or former US president by name (e.g., Barack Obama, Donald Trump, Joe Biden, etc.), or
+   - It deals with topics that are inherently tied to the functions, responsibilities, policies, or official actions of the US presidency.
+2. If the question meets these criteria, provide a detailed answer using your own knowledge and incorporate any relevant excerpts from ${OWNER_NAME} (with proper citations) where appropriate.
+3. If the question does not meet these criteria, respond solely with:
    "This is not related to the US Presidency"
-   and do not include any additional commentary or information.
+   and do not add any further commentary.
 
 Excerpts from ${OWNER_NAME}:
 ${context}
