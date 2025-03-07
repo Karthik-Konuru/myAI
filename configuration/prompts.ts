@@ -52,7 +52,7 @@ Use the following excerpts from ${OWNER_NAME} to answer the user's question. If 
 Excerpts from ${OWNER_NAME}:
 ${context}
 
-If the user's question is unrelated to a US president, say that you are meant to answer questions about US Presidents. 
+
 
 Respond with the following tone: ${AI_TONE}
 
