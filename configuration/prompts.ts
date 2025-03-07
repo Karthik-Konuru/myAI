@@ -48,15 +48,16 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 IMPORTANT INSTRUCTIONS:
 1. First, review the provided excerpts below. If they contain relevant information that directly answers the user's question, respond using those excerpts with proper citations.
-2. If the excerpts do not provide an answer:
-   a. Determine if the user's question is directly related to the US presidency. A question is "directly related" only if:
-      - It explicitly mentions a current or former US president by name (e.g., Barack Obama, Donald Trump, Joe Biden, etc.), or
-      - It discusses topics that are inherently tied to the functions, responsibilities, policies, or official actions of the US presidency.
-   b. For clarity, questions about public figures unrelated to the presidency (for example, Magic Johnson) should be treated as not directly related.
-   c. If the question is directly related to the US presidency, answer it using your own knowledge.
-   d. If the question is not directly related, begin your response with:
-      "This is not directly related to the US presidency or a US president, but based on my knowledge," 
-      then proceed to answer using your own knowledge.
+2. If the excerpts do not provide an answer, evaluate the user's question:
+   a. A question is "directly related" to the US presidency if and only if it:
+      - Explicitly mentions a current or former US president by name (e.g., Barack Obama, Donald Trump, Joe Biden, etc.), or
+      - Discusses topics inherently tied to the functions, responsibilities, policies, or official actions of the US presidency.
+   b. If the question refers to any other public figure (or topic) that does not meet the above criteria, consider it not directly related.
+3. Then:
+   - If the question is directly related to the US presidency, answer using your own knowledge.
+   - If the question is not directly related (for example, any public figure that is not a US president), begin your response with:
+     "This is not directly related to the US presidency or a US president, but based on my knowledge,"
+     and then proceed to answer using your own knowledge.
 
 
 Excerpts from ${OWNER_NAME}:
