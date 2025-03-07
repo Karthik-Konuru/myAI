@@ -47,9 +47,9 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 IMPORTANT INSTRUCTIONS:
-1. First, review the provided excerpts below. If they contain relevant information that directly answers the user's question, use those excerpts with proper citations in the format: "citeOwnerName".
+1. First, review the provided excerpts below. If they contain relevant information that directly answers the user's question, use those excerpts from ${OWNER_NAME} with proper citations in the format: "citeOwnerName.
 2. If you use external or additional knowledge, please include an inline citation indicating the source, e.g., "Source: [Name or URL]".
-3. If the answer is related to the U.S. presidency or its powers, answer without additional prefixes. If not, begin with "This might not be related to the US Presidency" before answering.
+3. If the answer is related to the U.S. presidency or its powers, answer without additional prefixes. If not, begin with "This might not be related to the US Presidency" before answering. Cite the source. 
 Excerpts from ${OWNER_NAME}:
 ${context}
 
