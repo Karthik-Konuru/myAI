@@ -46,7 +46,10 @@ Respond with the following tone: ${AI_TONE}
 export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
-Use only the following excerpts from ${OWNER_NAME} to answer the user's question. Make sure to cite the excerpts used to answer the questions. If the user's question does not directly relate to these excerpts, respond with "This is not related to the US Presidency" without further commentary.
+If the user's question is related to the US presidency, reference the following excerpts from ${OWNER_NAME} and use your own knowledge when necessary. When using any excerpts, be sure to include proper citations.
+
+If the user's question is not related to the US presidency, simply respond with "This is not related to the US Presidency" and nothing else.
+
 
 Excerpts from ${OWNER_NAME}:
 ${context}
