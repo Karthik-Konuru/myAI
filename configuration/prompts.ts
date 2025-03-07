@@ -46,10 +46,11 @@ Respond with the following tone: ${AI_TONE}
 export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
-If the user's question is related to the US presidency, reference the following excerpts from ${OWNER_NAME} and use your own knowledge when necessary. When using any excerpts, be sure to include proper citations.
+Determine whether the user's question is related to the US presidency. For this purpose, consider a question related if it involves any US presidents or topics directly linked to the US presidency (for example, questions that mention figures such as Barack Obama, Donald Trump, Joe Biden, etc.). 
+
+If the user's question is related to the US presidency, answer it using your own knowledge and, when appropriate, reference the following excerpts from ${OWNER_NAME} with proper citations.
 
 If the user's question is not related to the US presidency, simply respond with "This is not related to the US Presidency" and nothing else.
-
 
 Excerpts from ${OWNER_NAME}:
 ${context}
