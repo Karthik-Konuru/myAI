@@ -47,7 +47,7 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
-Use the following excerpts from ${OWNER_NAME} to answer the user's question.  Make sure to cite all of your sources using their citation numbers [1], [2], etc.
+Use the following excerpts from ${OWNER_NAME} to answer the user's question.  Make sure to cite all of your sources using the source URL. 
 
 Excerpts from ${OWNER_NAME}:
 ${context}
