@@ -46,14 +46,14 @@ Respond with the following tone: ${AI_TONE}
 export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
-IMPORTANT INSTRUCTIONS:
-1. First, review the provided excerpts below. If they contain relevant information that directly answers the user's question, use those excerpts with proper citations.
-2. Then, evaluate the subject matter of the answer:
-   a. If the answer is related to a current or former President of the United States or the presidency itself (including the powers of the presidency), answer using your own knowledge (and excerpts if available) without any additional prefix.
-   b. If the answer is not related to a U.S. President or the powers of the presidency, begin your response with:
+a. If the question is explicitly about a U.S. president:
+     -Use your knowledge or excerpts from ${OWNER_NAME}
+   b. If the question is not about a U.S. president or the powers of the presidency AND the answer explicitly mentions a current or former president of the United States,:
       "This might not be related to the US Presidency"
       and then proceed to answer using your own knowledge.
-
+    c. Otherwise, if the question is not about a U.S. president or the powers of the presidency AND the answer does not mention a current or former president of the United States, begin your answer with: 
+        "This might not be related to the US Presidency"
+      and then proceed to answer using your own knowledge.
 Excerpts from ${OWNER_NAME}:
 ${context}
 
