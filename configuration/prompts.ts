@@ -46,11 +46,13 @@ Respond with the following tone: ${AI_TONE}
 export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
-Determine whether the user's question is related to the US presidency. For this purpose, consider a question related if it involves any US presidents or topics directly linked to the US presidency (for example, questions that mention figures such as Barack Obama, Donald Trump, Joe Biden, etc.). 
-
-If the user's question is related to the US presidency, answer it using your own knowledge and, when appropriate, reference the following excerpts from ${OWNER_NAME} with proper citations.
-
-If the user's question is not related to the US presidency, simply respond with "This is not related to the US Presidency" and nothing else.
+IMPORTANT INSTRUCTIONS:
+1. First, analyze the user's question to determine if it is directly related to the US presidency.
+   - A question is "related" if it mentions a US president by name (e.g., Barack Obama, Donald Trump, Joe Biden, etc.) or discusses topics directly tied to the role, policies, or actions of the US presidency.
+2. If the question is directly related to the US presidency, answer it using your own knowledge and incorporate any relevant excerpts from ${OWNER_NAME} (with proper citations) when appropriate.
+3. If the question is not directly related to the US presidency, respond solely with:
+   "This is not related to the US Presidency"
+   and do not include any additional commentary or information.
 
 Excerpts from ${OWNER_NAME}:
 ${context}
