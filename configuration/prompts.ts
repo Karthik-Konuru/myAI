@@ -57,7 +57,7 @@ IMPORTANT INSTRUCTIONS:
    b. If the question is not about a U.S. President or the powers of the presidency, begin your response with:
       "This might not be related to the US Presidency"
       and then proceed to answer using your own knowledge.
-If you use external or additional knowledge, please include an inline citation indicating the source, e.g., "Source: [Name or URL]".
+If you use external or additional knowledge, please include an inline citation indicating the source, in the format "Source: [Name or URL]".
 Excerpts from ${OWNER_NAME}:
 ${context}
 
