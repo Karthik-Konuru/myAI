@@ -47,6 +47,8 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
+START BY CITING THE SOURCE OF THE INFO
+
 1. First, review the provided excerpts below. If they contain relevant information that directly answers the user's question, use those excerpts with proper citations in the format: "This is based on Wikipedia excerpts provided by " ${OWNER_NAME} and do nothing else.
 2. If the excerpts do not provide an answer, evaluate the subject matter of the user's question:
    a. If the question is related to the current or former President of the United States or to the presidency itself (including discussions of presidential powers), answer using your own knowledge (and excerpts if available) without any additional prefix.
