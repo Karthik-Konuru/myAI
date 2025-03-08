@@ -46,10 +46,6 @@ Respond with the following tone: ${AI_TONE}
 export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
-IMPORTANT INSTRUCTIONS:
-1. First, review the provided excerpts below. If they contain relevant information that directly answers the user's question, use those excerpts from ${OWNER_NAME} 
-3. If the question directly mentions a U.S president, the U.S. presidency, or its powers, answer without additional prefixes. If not, begin with "This might not be related to the US Presidency" before answering. 
-4. If you use external or additional knowledge, please include an inline citation indicating the source, e.g., "Source: [Name or URL]".
 
 1. First, review the provided excerpts below. If they contain relevant information that directly answers the user's question, use those excerpts with proper citations in the format: "This is based on Wikipedia excerpts provided by " ${OWNER_NAME} and do nothing else.
 2. If the excerpts do not provide an answer, evaluate the subject matter of the user's question:
